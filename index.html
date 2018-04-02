@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copy to clipboard</title>
+
+	<style type="text/css">
+
+		* {
+			box-sizing: border-box;
+			font-family: helvetica, sans-serif;
+		}
+
+		html, body {
+			background: #123456;
+			text-align: center;
+			color: white;
+		}
+
+		.container {
+			margin-top: 30vh;
+		}
+
+		h1 {
+			font-size: 15px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			padding-bottom: 30px;
+		}
+
+		input,
+		button {
+			padding: 12px 18px;
+			border-radius: 2px;
+			outline: none;
+			border: none;
+			font-size: 16px;
+			min-height: 56px;
+			display: inline-block;
+			margin: 10px;
+		}
+
+		input {
+			min-width: 25%;
+		}
+
+		button {
+			font-weight: bold;
+			background: blue;
+			color: white;
+			background: #098eff;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background: #3ea6ff;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<h1>Copy to clipboard - JS</h1>
+		<input id="myInput" type="text" name="my_input_field" placeholder="Type here">
+		<button id="myButton" onclick="copyToClipboard()">Copy to clipboard</button>
+	</div>
+
+
+	<script type="text/javascript">
+
+		function copyToClipboard() {
+			// 1. get the HTML element
+			var input_field = document.getElementById("myInput");
+			var button = document.getElementById("myButton");
+
+			// 2. Ask the browser to select the input field.
+			input_field.select();
+
+			// 3. Ask the browser to mimic the "Copy" command.
+			document.execCommand("Copy");
+
+			// 4. Change button text.
+			button.innerHTML = "Copied !"
+		}
+
+	</script>
+
+</body>
+</html>
+
+
+
+
